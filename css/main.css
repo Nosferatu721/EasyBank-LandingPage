@@ -255,6 +255,66 @@ header {
   margin: 1rem 0;
 }
 
+/* FOOTER */
+
+footer {
+  background: hsl(233, 26%, 24%);
+  padding: 4rem 0;
+}
+
+footer .container {
+  display: grid;
+  grid-template-columns: 150px 1fr 250px;
+  height: 80px;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.links-container .img-logo {
+  filter: invert(50%);
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.options-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.options-container a {
+  padding: 1rem;
+}
+
+.fin {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.fin .button-request {
+  background: hsl(233, 26%, 24%);
+}
+
+.fin .button-request::before,
+.fin .button-request::after {
+  background-color: hsl(233, 26%, 24%);
+  border: 1px solid hsl(233, 26%, 24%);
+}
+
+.fin .button-request a {
+  color: white;
+}
+
 @media screen and (max-width: 768px) {
   .header-container {
     display: block;
