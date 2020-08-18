@@ -39,6 +39,7 @@ header {
   left: 0;
   right: 0;
   z-index: 10;
+  box-shadow: 0 0 5px hsl(0, 0%, 79%);
 }
 
 .header-container {
@@ -124,11 +125,13 @@ header {
 .hero-container .container {
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-template-areas: "details img";
   height: 400px;
   padding-right: 0;
 }
 
 .hero-details {
+  grid-area: details;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -147,6 +150,7 @@ header {
 }
 
 .hero-img {
+  grid-area: img;
   height: inherit;
   background-image: url(../img/bg-intro-desktop.svg);
   background-size: 150%;
@@ -181,6 +185,7 @@ header {
   font-weight: normal;
   color: hsl(233, 26%, 24%);
   font-size: 30px;
+  margin-bottom: 1.5rem;
 }
 
 .info-cards-container {
@@ -229,7 +234,7 @@ header {
 
 .article-card {
   background: white;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 
@@ -366,5 +371,89 @@ footer .container {
 
   .menu-container.show {
     display: block;
+  }
+
+  /* HERO */
+
+  .info-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-card {
+    padding: 2rem;
+  }
+
+  .articles-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .article-detail {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .hero-container .container {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "img"
+      "details";
+    padding: 0;
+  }
+
+  .hero-img {
+    background-image: url(../img/bg-intro-mobile.svg);
+  }
+
+  .hero-img img {
+    top: -180px;
+  }
+
+  .hero-details {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-details p {
+    line-height: 2.5rem;
+  }
+
+  .info-cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    text-align: center;
+  }
+  
+  .articles-cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  footer .container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .links-container {
+    align-items: center;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .icons-container img {
+    margin: 0 1rem;
+  }
+  
+  .options-container {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .fin {
+    height: 80px;
+    align-items: center;
   }
 }
